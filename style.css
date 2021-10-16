@@ -1,0 +1,146 @@
+body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.main,
+.article-container{
+     max-width: 1540px;
+     margin: auto;
+}
+
+.logo-container{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.logo-container img{
+     width: 80%;
+     max-width: 350px;
+}
+
+.nav{
+     flex-direction: column;
+}
+
+.input-container{
+     padding: 20px 50px 0;
+     position: relative;
+}
+
+.input-container .fa-search{
+     position: absolute;
+     right: 70px;
+    top: 47%;
+    font-size: 25px;
+}
+
+.input-container input{
+     width: 100%;
+     height: 50px;
+     background-color: #E7E7E7;
+     border-radius: 5px;
+     border: none;
+}
+
+input::placeholder{
+     padding: 0 20px;
+}
+
+.dropdown-container{
+     padding: 25px 50px;
+     display: flex;
+}
+
+.dropdown{
+     margin: 0 10px;
+}
+
+.input-btn{
+     display: none;
+}
+
+.dropdown-menu{
+     width: 450%;
+}
+
+.dropdown-menu.show{
+     display: flex !important;
+     flex-wrap: wrap !important;
+}
+
+.dropdown-menu li{
+     width: 33.33%;
+}
+
+.dropdown-item{
+     color: white !important;
+}
+
+.nav .dropdown-container .dropdown:first-child .dropdown-menu{
+     background-color: #3282F7 !important;
+}
+.nav .dropdown-container .dropdown:nth-child(0n+2) .dropdown-menu{
+     background-color: #198754 !important;
+}
+.nav .dropdown-container .dropdown:nth-child(0n+3) .dropdown-menu{
+     background-color: #dc3545 !important;
+}
+/* hover */
+.nav .dropdown-container .dropdown:first-child .dropdown-menu .dropdown-item:hover{
+     color: #3282F7 !important;
+}
+.nav .dropdown-container .dropdown:nth-child(0n+2) .dropdown-menu .dropdown-item:hover{
+     color: #198754 !important;
+}
+.nav .dropdown-container .dropdown:nth-child(0n+3) .dropdown-menu .dropdown-item:hover{
+     color: #dc3545 !important;
+}
+
+
+/* Article ( recette section ) */
+.article-container{
+     display: flex;
+     flex-wrap: wrap;
+}
+.article{
+     width: calc(33.33% - 50px);
+     margin: 25px;
+     background-color: #f1f1f1;
+     border-radius: 15px;
+}
+
+.temps-container{
+     display: flex;
+     align-items: center;
+}
+
+.temps{
+     margin: 0 10px;
+}
+
+.bot,
+.top{
+     display: flex;
+     justify-content: space-between;
+     padding: 10px;
+     
+}
+
+.top{
+     border-top: 150px solid gray;
+     border-radius: 15px;
+}
+
+.liste,
+.desc{
+     width: 50%;
+}
+
+.desc{
+     text-overflow: ellipsis;
+     overflow: hidden;
+     white-space: nowrap;
+}
+

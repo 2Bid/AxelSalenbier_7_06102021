@@ -1,0 +1,28 @@
+3 branche git: 
+1 pour chaque algo (2)
+
+idealement crée en premier les tags avant de créer les branche pour l'avoir 
+
+balise template html
+
+1 -> for 
+2 -> itération tableau ( map )
+
+eslint
+bootstrap
+webpack
+
+comparer 2 algo avec jsben.ch
+
+créer repo
+
+filtrer qui doit marcher sans accent sur les lettres
+
+
+ajouter un readme pour le p6
+
+utilisé des for/ pas de filter
+enlever les tags en dur
+
+brouillon algorigramme en 2 partie / recherche et affichage
+
