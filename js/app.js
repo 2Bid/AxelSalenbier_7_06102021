@@ -29,3 +29,30 @@ async function affichage(recettes){
 }
 
 await affichage(recipes)
+
+// recherche par input
+const input = document.getElementById('input')
+
+input.addEventListener('keyup', async function(){
+     const inputValue = input.value
+     recherche(inputValue)
+})
+
+function recherche(texte){
+     const recetteFiltrer = recipes.filter(item=>(
+          item.name.toLocaleLowerCase().includes(texte.toLocaleLowerCase()) || 
+          item.description.toLocaleLowerCase().includes(texte.toLocaleLowerCase()) ||
+          item.ingredients.map(ingredient=>ingredient.ingredient).some(ingredientName=>ingredientName.toLocaleLowerCase().includes(texte))
+     ))
+
+     // console.log(recetteFiltrer)
+     // const recetteFiltrerParDesc = recipes.filter(item => item.description.toLocaleLowerCase().includes(texte.toLocaleLowerCase()))
+     // const recetteFiltrerParIngredient = recipes.filter(item=>{
+     //      const ingredients = item.ingredients.map(ingredient=>ingredient.ingredient)
+     //      return ingredients.some(ingredientName=>ingredientName.toLocaleLowerCase().includes(texte))
+     // })
+     // recetteFiltrer.push(...recetteFiltrerParIngredient)
+     // recetteFiltrer.push(...recetteFiltrerParDesc)
+     
+     affichage(new Set(recetteFiltrer))
+}
