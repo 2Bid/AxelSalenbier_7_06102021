@@ -4,6 +4,7 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" href="#">
      <link rel="stylesheet" href="./style.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
@@ -20,64 +21,37 @@
                     <input class="input" id="input" type="text" placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette">
                     <i class="fas fa-search"></i>
                </div>
+               <div class="tags-container">
+                    <div class="ingredients-tags-container"></div>
+                    <div class="appareils-tags-container"></div>
+                    <div class="ustensils-tags-container"></div>
+               </div>
                <div class="dropdown-container">
                     <div class="ingredients-container dropdown">
                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                            Ingrédients
-                           <input class="input-btn" type="text">
+                           <input class="input-btn dropdown-input" type="text">
                          </button>
+                         
                          <ul class="dropdown-menu" id="dropdown-ingredients" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="#">Lait de coco</a></li>
+                              
+                              <!-- <li><a class="dropdown-item" href="#" data-type="ingredient">Lait de coco</a></li> -->
                          </ul>
                     </div>
                     <div class="appareil-container dropdown">
                          <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                            Appareils
+                           <input class="input-btn dropdown-input" type="text">
                          </button>
-                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="#">Saladier</a></li>
-                              <li><a class="dropdown-item" href="#">Blender</a></li>
-                              <li><a class="dropdown-item" href="#">Cocotte</a></li>
-                              <li><a class="dropdown-item" href="#">Cuiseur de riz</a></li>
-                              <li><a class="dropdown-item" href="#">Four</a></li>
-                              <li><a class="dropdown-item" href="#">Casserole</a></li>
-                              <li><a class="dropdown-item" href="#">Poële à crêpe</a></li>
-                              <li><a class="dropdown-item" href="#">Sauteuse</a></li>
-                              <li><a class="dropdown-item" href="#">Mixer</a></li>
-                              <li><a class="dropdown-item" href="#">Moule à charlotte</a></li>
+                         <ul class="dropdown-menu" id="dropdown-appareils" aria-labelledby="dropdownMenuButton1">
                          </ul>
                     </div>
                     <div class="ustensiles-container dropdown">
                          <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                            Ustensiles
+                           <input class="input-btn dropdown-input" type="text">
                          </button>
-                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="#">cuillère à Soupe</a></li>
-                              <li><a class="dropdown-item" href="#">verres</a></li>
-                              <li><a class="dropdown-item" href="#">presse citron</a></li>
-                              <li><a class="dropdown-item" href="#">couteau</a></li>
-                              <li><a class="dropdown-item" href="#">passoire</a></li>
-                              <li><a class="dropdown-item" href="#">saladier</a></li>
-                              <li><a class="dropdown-item" href="#">moule à tarte</a></li>
-                              <li><a class="dropdown-item" href="#">râpe à fromage</a></li>
-                              <li><a class="dropdown-item" href="#">fourchette</a></li>
-                              <li><a class="dropdown-item" href="#">moule à tartelettes (6)</a></li>
-                              <li><a class="dropdown-item" href="#">casserolle</a></li>
-                              <li><a class="dropdown-item" href="#">moule à gateaux</a></li>
-                              <li><a class="dropdown-item" href="#">cuillère en bois</a></li>
-                              <li><a class="dropdown-item" href="#">plat à gratin</a></li>
-                              <li><a class="dropdown-item" href="#">Économe</a></li>
-                              <li><a class="dropdown-item" href="#">cuillère à melon</a></li>
-                              <li><a class="dropdown-item" href="#">cuillère en bois</a></li>
-                              <li><a class="dropdown-item" href="#">poelle à frire</a></li>
-                              <li><a class="dropdown-item" href="#">louche</a></li>
-                              <li><a class="dropdown-item" href="#">plat à gratin</a></li>
-                              <li><a class="dropdown-item" href="#">fouet</a></li>
-                              <li><a class="dropdown-item" href="#">rouleau à patisserie</a></li>
-                              <li><a class="dropdown-item" href="#">plaque de cuisson</a></li>
-                              <li><a class="dropdown-item" href="#">cocotte minute</a></li>
-                              <li><a class="dropdown-item" href="#">bol</a></li>
-                              <li><a class="dropdown-item" href="#">spatule</a></li>
+                         <ul class="dropdown-menu" id="dropdown-ustensils" aria-labelledby="dropdownMenuButton1">
                          </ul>
                     </div>
                </div>

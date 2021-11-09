@@ -61,8 +61,31 @@ input::placeholder{
      display: none;
 }
 
+.tags-container{
+     display: flex;
+     margin-top: 10px;
+}
+
+.selected-tag{
+     padding: 5px 10px;
+     margin: 10px;
+     display: inline-block;
+     border-radius: 15px;
+     color: white;
+}
+
+.selected-tag i{
+     margin-left: 5px;
+}
+
+.fa-times-circle{
+     cursor: pointer;
+}
+
 .dropdown-menu{
      width: 450%;
+     max-height: 500px;
+     overflow: auto;
 }
 
 .dropdown-menu.show{
@@ -72,19 +95,24 @@ input::placeholder{
 
 .dropdown-menu li{
      width: 33.33%;
+     white-space: normal;
 }
+
 
 .dropdown-item{
      color: white !important;
 }
 
-.nav .dropdown-container .dropdown:first-child .dropdown-menu{
+.nav .dropdown-container .dropdown:first-child .dropdown-menu,
+.ingredient-tag{
      background-color: #3282F7 !important;
 }
-.nav .dropdown-container .dropdown:nth-child(0n+2) .dropdown-menu{
+.nav .dropdown-container .dropdown:nth-child(0n+2) .dropdown-menu,
+.appareil-tag{
      background-color: #198754 !important;
 }
-.nav .dropdown-container .dropdown:nth-child(0n+3) .dropdown-menu{
+.nav .dropdown-container .dropdown:nth-child(0n+3) .dropdown-menu,
+.ustensil-tag{
      background-color: #dc3545 !important;
 }
 /* hover */
@@ -139,8 +167,10 @@ input::placeholder{
 }
 
 .desc{
-     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 8;
+     -webkit-box-orient: vertical;
      overflow: hidden;
-     white-space: nowrap;
+     margin: 1em;
 }
 
