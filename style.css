@@ -61,6 +61,10 @@ input::placeholder{
      display: none;
 }
 
+.dropdown-input{
+     display: inline-block;
+}
+
 .tags-container{
      display: flex;
      margin-top: 10px;
@@ -146,6 +150,7 @@ input::placeholder{
 
 .temps{
      margin: 0 10px;
+     white-space: nowrap;
 }
 
 .bot,
