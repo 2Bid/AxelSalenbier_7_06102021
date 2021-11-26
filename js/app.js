@@ -364,7 +364,7 @@ function dropdownToggle(e) {
 
   for (const menu of ddMenus) {
     if (menu === ddMenufromInput) {
-      menu.stopImmediatePropagation();
+      return;
     }
     if (menu !== ddMenu) {
       menu.classList = 'dropdown-menu';
@@ -393,6 +393,7 @@ for (const item of dd) {
 window.addEventListener('click', (e) => {
   const menu = document.querySelector('.dropdown-menu.show');
   const classe = e.target.className;
+  const arrowDown = document.querySelector('.chevron-down');
   if
   (
     ((!classe.includes('dropdown')) && (!classe.includes('chevron')))
@@ -400,6 +401,8 @@ window.addEventListener('click', (e) => {
   ) {
     if (menu) {
       menu.classList = 'dropdown-menu';
+      // reinitialise la position de la fleche
+      arrowDown.classList = 'fas fa-chevron-up';
     }
   }
 });
