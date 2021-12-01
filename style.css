@@ -24,6 +24,14 @@ body {
      flex-direction: column;
 }
 
+.btn{
+     padding: 0 !important;
+}
+
+.btn:focus{
+     box-shadow: none !important;
+}
+
 .input-container{
      padding: 20px 50px 0;
      position: relative;
@@ -42,10 +50,8 @@ body {
      background-color: #E7E7E7;
      border-radius: 5px;
      border: none;
-}
-
-input::placeholder{
-     padding: 0 20px;
+     outline: none;
+     padding-left: 20px;
 }
 
 .dropdown-container{
@@ -61,8 +67,67 @@ input::placeholder{
      display: none;
 }
 
+.fa-chevron-up{
+     margin: 0 8px;
+     z-index: 100;
+}
+
+.dropdown-input{
+     display: inline-block;
+     width: 100%;
+     background-color: transparent;
+     color: white;
+     outline: none;
+}
+
+.dropdown-input::placeholder{
+     color: white;
+}
+
+.chevron-down{
+     transform: rotateX(180deg) !important;
+}
+
+.tags-container{
+     display: flex;
+     margin-top: 10px;
+}
+
+.selected-tag{
+     padding: 5px 10px;
+     margin: 10px;
+     display: inline-block;
+     border-radius: 15px;
+     color: white;
+}
+
+.selected-tag i{
+     margin-left: 5px;
+}
+
+.fa-times-circle{
+     cursor: pointer;
+}
+
+.dropdown-input{
+     border: none;
+     padding: 0 6px;
+}
+
+.dropdown-toggle{
+     padding:  10px !important;
+}
+
+.dropdown-toggle::after{
+     display: none !important;
+}
+
 .dropdown-menu{
      width: 450%;
+     max-height: 500px;
+     margin-top: 5px !important;
+     overflow: auto;
+     display: none;
 }
 
 .dropdown-menu.show{
@@ -72,19 +137,39 @@ input::placeholder{
 
 .dropdown-menu li{
      width: 33.33%;
+     white-space: normal;
 }
+
+.dropdown-menu li:first-child{
+     width: 100%;
+     padding: 10px 10px;
+     white-space: normal;
+     position: sticky;
+     top: -10px;
+     background-color: inherit;
+     z-index: 5;
+}
+
 
 .dropdown-item{
      color: white !important;
+     text-transform: lowercase;
 }
 
-.nav .dropdown-container .dropdown:first-child .dropdown-menu{
+.dropdown-item::first-letter{
+     text-transform: capitalize;
+}
+
+.nav .dropdown-container .dropdown:first-child .dropdown-menu,
+.ingredient-tag{
      background-color: #3282F7 !important;
 }
-.nav .dropdown-container .dropdown:nth-child(0n+2) .dropdown-menu{
+.nav .dropdown-container .dropdown:nth-child(0n+2) .dropdown-menu,
+.appareil-tag{
      background-color: #198754 !important;
 }
-.nav .dropdown-container .dropdown:nth-child(0n+3) .dropdown-menu{
+.nav .dropdown-container .dropdown:nth-child(0n+3) .dropdown-menu,
+.ustensil-tag{
      background-color: #dc3545 !important;
 }
 /* hover */
@@ -114,10 +199,24 @@ input::placeholder{
 .temps-container{
      display: flex;
      align-items: center;
+     font-weight: bold;
+}
+
+.temps-container i{
+     font-size: 1.2rem
+}
+
+.nom{
+     padding-right: 10px;
 }
 
 .temps{
-     margin: 0 10px;
+     margin: 0 7px;
+     white-space: nowrap;
+}
+
+.ingredient{
+     margin: 5px 0;
 }
 
 .bot,
@@ -139,8 +238,69 @@ input::placeholder{
 }
 
 .desc{
-     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 8;
+     -webkit-box-orient: vertical;
      overflow: hidden;
-     white-space: nowrap;
+     margin: 1em;
 }
 
+@media screen and (max-width:1100px) {
+     .article{
+          width: calc(50% - 50px);
+     }
+
+     .nav{
+          width: 100%;
+     }
+
+     .dropdown{
+          position: static !important;
+     }
+
+     .dropdown-menu{
+          width: 90%;
+          left: 50%;
+          transform: translateX(-50%);
+     }
+
+     .input{
+          padding-right: 60px;
+     }
+
+     .input::placeholder{
+          text-overflow: ellipsis;
+     }
+}
+
+@media screen and (max-width:700px) {
+     .article{
+          width: calc(100% - 50px);
+     }
+
+     .input-container{
+          padding: 20px 20px 10px;
+     }
+
+     .input-container .fa-search {
+          right: 35px;
+          top: 40%;
+      }
+
+     .dropdown-container{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 0 20px 0;
+     }
+
+     .dropdown{
+          width: 100%;
+          max-width: 300px;
+          margin: 10px 0;
+     }
+
+     .dropdown-toggle{
+          width: 100%;
+     }
+}
