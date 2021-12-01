@@ -5,13 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./js/*js"
+    "lint": "eslint ./js/*.js"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3"
+  "dependencies": {
+    "eslint": "^8.2.0"
   }
 }
