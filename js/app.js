@@ -339,55 +339,49 @@ async function affichage(recettes) {
 affichage(recipes);
 
 function dropdownToggle(e) {
-  let ddMenufromInput;
-  let ddMenus;
-  let arrow;
-  let ddMenu;
+  const ddMenus = document.querySelectorAll('.dropdown-menu.show');
+  const arrow = e.target.lastElementChild;
+  const arrowBas = document.querySelector('.fas.fa-chevron-up.chevron-down');
+  const ddMenu = e.target.nextElementSibling;
 
-  if (e.target.className.includes('btn-container')) {
-    ddMenu = e.target.nextElementSibling;
-    ddMenufromInput = e.target.nextElementSibling.parentElement;
-    ddMenus = document.querySelectorAll('.dropdown-menu.show');
-    arrow = e.target.lastElementChild;
-  } else {
-    if (e.target.parentElement && e.target.parentElement.nextElementSibling) {
-      ddMenu = e.target.parentElement.nextElementSibling;
-      ddMenufromInput = e.target.parentElement.nextElementSibling.parentElement;
-    } else {
-      ddMenu = '';
-      ddMenufromInput = '';
-    }
-
-    ddMenus = document.querySelectorAll('.dropdown-menu.show');
-    arrow = e.target.nextElementSibling;
+  if (e.target.className === 'dropdown-input' || e.target.className === 'dropdown-item') {
+    return;
   }
 
   for (const menu of ddMenus) {
-    if (menu === ddMenufromInput) {
-      return;
-    }
     if (menu !== ddMenu) {
       menu.classList = 'dropdown-menu';
+      arrowBas.classList = 'fas fa-chevron-up';
     }
   }
 
-  // besoin de verifier car sinon erreur dans la console si on clique sur l'icone chevron
-  if (ddMenu) {
-    ddMenu.classList.toggle('show');
-  }
-  if (arrow) {
-    arrow.classList.toggle('chevron-down');
-  }
+  ddMenu.classList.toggle('show');
+  arrow.classList.toggle('chevron-down');
+
   e.stopImmediatePropagation();
 }
 
-const dd = document.querySelectorAll('.dropdown');
-
+const dd = document.querySelectorAll('.dropdown:not(.dropdown-input)');
 for (const item of dd) {
-  if (!item.className.includes('input')) {
-    item.addEventListener('click', dropdownToggle);
-  }
+  item.addEventListener('click', dropdownToggle);
 }
+
+// dropdown toggle s'active si on clique sur l'icone
+const arrowDropDown = document.querySelectorAll('.fa-chevron-up');
+arrowDropDown.forEach((arrow) => {
+  arrow.addEventListener('click', (e) => {
+    e.target.parentElement.click();
+    e.stopImmediatePropagation();
+  });
+});
+
+const dropdowns = document.querySelectorAll('.dropdown-toggle');
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener('click', (e) => {
+    e.target.parentElement.click();
+    e.stopImmediatePropagation();
+  });
+});
 
 // ferme le dropdown si on clique ailleurs
 window.addEventListener('click', (e) => {
@@ -406,17 +400,6 @@ window.addEventListener('click', (e) => {
     }
   }
 });
-
-// dropdown toggle s'active si on clique sur l'icone
-const arrowDropDown = document.querySelectorAll('.fa-chevron-up');
-for (const arrow of arrowDropDown) {
-  arrow.addEventListener('click', (e) => {
-    const menu = e.target.offsetParent.children[1];
-    arrow.classList.toggle('chevron-down');
-    menu.classList.toggle('show');
-    e.stopImmediatePropagation();
-  });
-}
 
 // recherche de recettes via l'input
 function rechercheInput(texte) {
