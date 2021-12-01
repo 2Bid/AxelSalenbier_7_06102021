@@ -296,11 +296,30 @@ body {
 
      .dropdown{
           width: 100%;
-          max-width: 300px;
+          max-width: none;
           margin: 10px 0;
      }
 
      .dropdown-toggle{
           width: 100%;
+     }
+
+     .btn{
+          width: 100%;
+          display: flex !important;
+          align-items: center !important;
+     }
+
+     .bot{
+          flex-direction: column;
+     }
+
+     .liste,
+     .desc{
+          width: 100%;
+     }
+
+     .desc{
+          margin: 15px 0;
      }
 }
