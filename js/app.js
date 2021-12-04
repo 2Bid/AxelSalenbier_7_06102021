@@ -403,23 +403,11 @@ window.addEventListener('click', (e) => {
 // recherche de recettes via l'input
 function rechercheInput(texte) {
   const normalizeText = texte.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
-  const recetteFiltrer = [];
-  for (const recette of recipes) {
-    if (recette.name.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(normalizeText)) {
-      recetteFiltrer.push(recette);
-      continue;
-    }
-    if (recette.description.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(normalizeText)) {
-      recetteFiltrer.push(recette);
-      continue;
-    }
-    for (const ingredient of recette.ingredients) {
-      if (ingredient.ingredient.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(normalizeText)) {
-        recetteFiltrer.push(ingredient);
-        break;
-      }
-    }
-  }
+  const recetteFiltrer = recipes.filter((item) => (
+    item.name.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(normalizeText)
+    || item.description.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(normalizeText)
+    || item.ingredients.map((ingredient) => ingredient.ingredient).some((ingredientName) => ingredientName.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(normalizeText))
+  ));
 
   affichage(new Set(recetteFiltrer));
 }
